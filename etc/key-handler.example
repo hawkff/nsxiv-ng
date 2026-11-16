@@ -1,0 +1,59 @@
+#!/bin/sh
+# Example key-handler for nsxiv-ng.
+# Install: mkdir -p ~/.config/nsxiv-ng/exec &&
+#          cp etc/key-handler.example ~/.config/nsxiv-ng/exec/key-handler &&
+#          chmod +x ~/.config/nsxiv-ng/exec/key-handler
+#
+# $1 is the key pressed after C-x; the marked files, or the current one, arrive on stdin,
+# one path a line. On Linux the actions use wl-copy (Wayland) or xclip (X11), file, gio and
+# xdg-open.
+#
+# The viewer waits for the handler. The clipboard tools stay in the background to serve what
+# they copied, and so does xdg-open's file manager, so none of them keeps anything of the
+# viewer's: not the handler's stdin, the pipe the viewer writes the paths into, which would
+# stall the viewer once the pipe is full; and not its stdout or stderr, which -o or 2>&1 may
+# pipe to another program, whose input would not end until the clipboard changed hands. Both go
+# to /dev/null, so a clipboard tool's own error goes unseen.
+
+mac() { [ "$(uname)" = Darwin ]; }
+wayland() { [ -n "${WAYLAND_DISPLAY:-}" ]; }
+
+case "$1" in
+"c") # copy the file paths to the clipboard, separated by spaces
+    if mac; then tr '\n' ' ' | pbcopy
+    elif wayland; then tr '\n' ' ' | wl-copy >/dev/null 2>&1
+    else tr '\n' ' ' | xclip -selection clipboard >/dev/null 2>&1; fi ;;
+"y") # copy the first image itself to the clipboard
+    IFS= read -r file
+    if mac; then
+        osascript -e 'on run argv' \
+            -e 'set the clipboard to (read (POSIX file (item 1 of argv)) as «class PNGf»)' \
+            -e 'end run' "$file" 2>/dev/null ||
+            osascript -e 'on run argv' \
+                -e 'set the clipboard to (read (POSIX file (item 1 of argv)) as JPEG picture)' \
+                -e 'end run' "$file"
+    elif wayland; then
+        # -L: a link the viewer shows by its image, typed as that image
+        type=$(file -L -b --mime-type -- "$file")
+        wl-copy --type "$type" <"$file" >/dev/null 2>&1
+    else
+        type=$(file -L -b --mime-type -- "$file")
+        xclip -selection clipboard -t "$type" <"$file" >/dev/null 2>&1
+    fi ;;
+"t") # move to the trash
+    while IFS= read -r file; do
+        if mac; then
+            osascript -e 'on run argv' \
+                -e 'tell app "Finder" to delete POSIX file (item 1 of argv)' \
+                -e 'end run' "$file" >/dev/null
+        else
+            gio trash -- "$file"
+        fi
+    done ;;
+"r") # show the first file's folder in the file manager
+    IFS= read -r file
+    # xdg-open may run the file manager itself rather than hand the folder over, so it goes
+    # to the background, away from the viewer's input and output
+    if mac; then open -R "$file"
+    else xdg-open "$(dirname -- "$file")" </dev/null >/dev/null 2>&1 & fi ;;
+esac

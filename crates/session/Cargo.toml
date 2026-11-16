@@ -1,0 +1,25 @@
+[package]
+name = "nsxiv-ng-session"
+description = "One running viewer for nsxiv-ng's frontends"
+version.workspace = true
+edition.workspace = true
+rust-version.workspace = true
+license.workspace = true
+repository.workspace = true
+
+[dependencies]
+nsxiv-ng-core.workspace = true
+nsxiv-ng-decode.workspace = true
+# edit mode's annotations, drawing and saved image
+nsxiv-ng-edit.workspace = true
+nsxiv-ng-helper.workspace = true
+nsxiv-ng-render.workspace = true
+# the saved edit's PNG
+png = "0.18"
+
+[dev-dependencies]
+# the golden frames
+image = { version = "0.25.10", default-features = false, features = ["png"] }
+
+[lints]
+workspace = true

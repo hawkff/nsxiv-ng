@@ -1,0 +1,25 @@
+[package]
+name = "nsxiv-ng"
+description = "Keyboard-driven image viewer with nsxiv's keys"
+version.workspace = true
+edition.workspace = true
+rust-version.workspace = true
+license.workspace = true
+repository.workspace = true
+
+[dependencies]
+nsxiv-ng-core.workspace = true
+nsxiv-ng-decode.workspace = true
+nsxiv-ng-helper.workspace = true
+
+[target.'cfg(target_os = "linux")'.dependencies]
+nsxiv-ng-linux.workspace = true
+
+[target.'cfg(target_os = "macos")'.dependencies]
+nsxiv-ng-macos.workspace = true
+
+[dev-dependencies]
+image = { version = "0.25.10", default-features = false, features = ["png"] }
+
+[lints]
+workspace = true

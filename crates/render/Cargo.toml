@@ -1,0 +1,37 @@
+[package]
+name = "nsxiv-ng-render"
+description = "Rendering for nsxiv-ng"
+version.workspace = true
+edition.workspace = true
+rust-version.workspace = true
+license.workspace = true
+repository.workspace = true
+
+[dependencies]
+# geometry, the viewport and the grid layout that drawing follows
+nsxiv-ng-core.workspace = true
+
+# scaling, an enlargement on every core; the version exact, as image_view mirrors how it
+# weighs and rounds samples to move a frame on a pan
+fast_image_resize = { version = "=6.1.0", features = ["only_u8x4", "rayon"] }
+
+# text: the system's fonts, the order of right-to-left runs, the script of each run,
+# shaping, glyph outlines, the coverage masks they fill, and color emoji's PNG bitmaps
+fontdb = "0.24"
+unicode-bidi = "0.3"
+unicode-script = "0.5"
+harfrust = "0.15"
+skrifa = "0.49"
+tiny-skia = { version = "0.12", default-features = false, features = [
+    "std",
+    "simd",
+    "png-format",
+] }
+
+[dev-dependencies]
+# the golden frames, and the decoders that read their fixtures
+image = { version = "0.25.10", default-features = false, features = ["png"] }
+nsxiv-ng-decode.workspace = true
+
+[lints]
+workspace = true

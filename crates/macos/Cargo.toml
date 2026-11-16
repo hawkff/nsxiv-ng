@@ -1,0 +1,151 @@
+[package]
+name = "nsxiv-ng-macos"
+description = "The macOS frontend of nsxiv-ng"
+version.workspace = true
+edition.workspace = true
+rust-version.workspace = true
+license.workspace = true
+repository.workspace = true
+
+# nothing off macOS, where the crate is empty
+[target.'cfg(target_os = "macos")'.dependencies]
+nsxiv-ng-core.workspace = true
+nsxiv-ng-edit.workspace = true
+nsxiv-ng-render.workspace = true
+nsxiv-ng-session.workspace = true
+
+block2 = "0.6"
+# the main queue, the timers on it, and the sources for signals and file changes
+dispatch2 = { version = "0.3", default-features = false, features = ["std"] }
+# sigaction, and open with O_EVTONLY for a watch
+libc = "0.2"
+# the system's emoji font mapped, where reading it into memory takes 192 MB
+memmap2 = "0.9"
+objc2 = "0.6"
+objc2-app-kit = { version = "0.3", default-features = false, features = [
+    "std",
+    "block2",
+    "objc2-core-foundation",
+    "objc2-quartz-core",
+    "NSAnimation",
+    "NSAnimationContext",
+    "NSAppearance",
+    "NSApplication",
+    "NSButton",
+    "NSColor",
+    "NSColorSpace",
+    "NSControl",
+    "NSEvent",
+    "NSFont",
+    "NSGraphics",
+    "NSMenu",
+    "NSMenuItem",
+    "NSPasteboard",
+    "NSResponder",
+    "NSRunningApplication",
+    "NSScreen",
+    "NSText",
+    "NSTextField",
+    "NSTrackingArea",
+    "NSView",
+    "NSVisualEffectView",
+    "NSWindow",
+] }
+objc2-core-foundation = { version = "0.3", default-features = false, features = [
+    "std",
+    "CFCGTypes",
+    "CFDictionary",
+    "CFNumber",
+    "CFRunLoop",
+    "CFString",
+] }
+objc2-core-graphics = { version = "0.3", default-features = false, features = [
+    "std",
+    "CGColorSpace",
+    "CGDataProvider",
+    "CGImage",
+] }
+# the frames, drawn in place in memory the window server shows
+objc2-io-surface = { version = "0.3", default-features = false, features = [
+    "std",
+    "objc2-core-foundation",
+    "IOSurfaceRef",
+    "IOSurfaceTypes",
+    "libc",
+] }
+objc2-foundation = { version = "0.3", default-features = false, features = [
+    "std",
+    "NSArray",
+    "NSData",
+    "NSDictionary",
+    "NSIndexSet",
+    "NSRange",
+    "NSGeometry",
+    "NSNotification",
+    "NSProcessInfo",
+    "NSString",
+    "NSURL",
+] }
+objc2-quartz-core = { version = "0.3", default-features = false, features = [
+    "std",
+    "objc2-core-foundation",
+    "CALayer",
+    "CATransaction",
+] }
+# edit mode's recognition: text, barcodes, faces and the foreground
+objc2-vision = { version = "0.3.2", default-features = false, features = [
+    "std",
+    "objc2-core-foundation",
+    "objc2-core-graphics",
+    "objc2-core-video",
+    "VNDetectBarcodesRequest",
+    "VNDetectFaceRectanglesRequest",
+    "VNGenerateForegroundInstanceMaskRequest",
+    "VNObservation",
+    "VNRecognizeTextRequest",
+    "VNRequest",
+    "VNRequestHandler",
+] }
+# the foreground's mask, read from its pixel buffer
+objc2-core-video = { version = "0.3.2", default-features = false, features = [
+    "std",
+    "CVBase",
+    "CVBuffer",
+    "CVImageBuffer",
+    "CVPixelBuffer",
+    "CVReturn",
+] }
+
+[target.'cfg(target_os = "macos")'.dev-dependencies]
+nsxiv-ng-core.workspace = true
+# the recognizer's fixtures, and the extensions files opened are found by
+nsxiv-ng-decode.workspace = true
+# a child answers the decoding helper's flags, as the viewer does
+nsxiv-ng-helper.workspace = true
+# reading a frame back as the screen holds it, and saving it
+objc2-app-kit = { version = "0.3", default-features = false, features = [
+    "objc2-core-graphics",
+    "NSBitmapImageRep",
+    "NSColorSpace",
+    "NSGraphicsContext",
+    "NSImageRep",
+] }
+objc2-core-graphics = { version = "0.3", default-features = false, features = [
+    "CGBitmapContext",
+    "CGContext",
+    "CGEvent",
+    "CGEventTypes",
+] }
+objc2-foundation = { version = "0.3", default-features = false, features = [
+    "NSArray",
+    "NSData",
+    "NSDictionary",
+] }
+
+# runs a scenario a child process, so no test harness
+[[test]]
+name = "window"
+harness = false
+
+[lints]
+workspace = true

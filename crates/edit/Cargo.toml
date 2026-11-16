@@ -1,0 +1,21 @@
+[package]
+name = "nsxiv-ng-edit"
+description = "The edit mode of nsxiv-ng: annotations over the image shown"
+version.workspace = true
+edition.workspace = true
+rust-version.workspace = true
+license.workspace = true
+repository.workspace = true
+
+[dependencies]
+# points, rectangles and keys
+nsxiv-ng-core.workspace = true
+# annotation text, the image as shown, and tiny-skia, which draws the rest
+nsxiv-ng-render.workspace = true
+
+[dev-dependencies]
+# the tests' own stamp emoji among the system's fonts
+fontdb = "0.24"
+
+[lints]
+workspace = true

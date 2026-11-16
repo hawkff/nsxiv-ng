@@ -1,0 +1,35 @@
+# Golden frames, reference frames kept in the tree. A frame row shows the fixture
+# in a 256x192 canvas with the bar hidden, after the keys; a thumbnail row is
+# the thumbnail the grid makes. Keys are nsxiv's, space-separated; C-n is
+# Ctrl and n. A name ending in -down uses the default scale mode, which shrinks
+# a large image to fit and leaves a small one at 100%.
+# Drawn through Imlib2 1.12.4 on Debian 13; ImageMagick 7.1.1-43 made the
+# fixtures.
+# name	kind	fixture	keys (optional)
+gradient-down	frame	gradient.png
+gradient-down-noaa	frame	gradient.png	a
+gradient-50	frame	gradient.png	= - -
+gradient-150	frame	gradient.png	= +
+gradient-400	frame	gradient.png	= + + +
+gradient-400-noaa	frame	gradient.png	= + + + a
+gradient-fill	frame	gradient.png	F
+checker-down	frame	checker.png
+checker-down-noaa	frame	checker.png	a
+checker-400	frame	checker.png	= + + +
+checker-400-noaa	frame	checker.png	= + + + a
+photo-down	frame	photo.jpg
+photo-gamma-up	frame	photo.jpg	} } } } } } } }
+photo-gamma-down	frame	photo.jpg	{ { { { { { { {
+photo-contrast-up	frame	photo.jpg	) ) ) ) ) ) ) )
+photo-contrast-down	frame	photo.jpg	( ( ( ( ( ( ( (
+photo-turned-flipped	frame	photo.jpg	> |
+photo-150-panned	frame	photo.jpg	= + l l d
+alpha-down	frame	alpha.png
+alpha-checkerboard	frame	alpha.png	A
+alpha-50	frame	alpha.png	= - -
+alpha-200-checkerboard	frame	alpha.png	= + + A
+moving-1	frame	moving.gif
+moving-2	frame	moving.gif	C-n
+moving-3	frame	moving.gif	C-n C-n
+photo-thumbnail	thumbnail	photo.jpg
+moving-thumbnail	thumbnail	moving.gif

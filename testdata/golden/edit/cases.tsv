@@ -1,0 +1,32 @@
+# The edit mode's golden frames over base.png (256 x 192): a frame each, its annotations
+# drawn over the base at its own size, as the flattened image is. The edit crate's golden
+# test reads this file.
+# Kind `reference`: a reference frame kept in the tree, drawn with CoreGraphics, which the
+# viewer's frame must match within a bound. Kind `own`: the viewer's own frame (text in
+# DejaVu Sans, emoji in the system's color font, a frame for each system), its text and emoji
+# placed where the reference frames place them, where the test says.
+# An annotation: tool x,y [x,y] key=value ...; the end is the start unless given. Keys:
+# width, fill (strokefill, fill), censor (blur, solid), color (a palette name), number,
+# font, text (_ for a space, \n for a new line), points (x,y/x,y/...). Annotations are
+# separated by " ; ".
+# The reference frames were drawn with CoreGraphics on macOS 27.2.
+# Base: ImageMagick 7.1.2-35, magick testdata/fixtures/photo.jpg -resize 256x192 -strip
+# PNG24:base.png
+# name	kind	annotations
+arrow	reference	arrow 40,152 200,48
+rect-stroke	reference	rect 48,40 208,152
+rect-strokefill	reference	rect 48,40 208,152 fill=strokefill
+rect-fill	reference	rect 48,40 208,152 fill=fill
+ellipse-stroke	reference	ellipse 48,40 208,152 width=8
+ellipse-strokefill	reference	ellipse 48,40 208,152 fill=strokefill
+ellipse-fill	reference	ellipse 48,40 208,152 fill=fill
+pencil	reference	pencil 0,0 width=6 points=32,96/40,103.85/48,110.84/56,116.2/64,119.33/72,119.89/80,117.82/88,113.35/96,106.97/104,99.39/112,91.43/120,83.97/128,77.84/136,73.7/144,72.03/152,72.99/160,76.48/168,82.12/176,89.29/184,97.2/192,104.98/200,111.77/208,116.82/216,119.58/224,119.74
+marker	reference	marker 0,0 color=yellow points=32,96/40,103.85/48,110.84/56,116.2/64,119.33/72,119.89/80,117.82/88,113.35/96,106.97/104,99.39/112,91.43/120,83.97/128,77.84/136,73.7/144,72.03/152,72.99/160,76.48/168,82.12/176,89.29/184,97.2/192,104.98/200,111.77/208,116.82/216,119.58/224,119.74
+spotlight	reference	spotlight 24,24 104,88 ; spotlight 72,64 232,168
+censor-solid	reference	censor 40,32 216,160 censor=solid
+censor-blur	reference	censor 40,32 216,160 censor=blur
+censor-pixelate	own	censor 40,32 216,160
+text	own	text 24,48 font=16 text=Hello,_edit_mode\nsecond_line_Ag
+badge	own	badge 64,64 number=1 ; badge 128,96 number=2 width=8 ; badge 192,128 number=12
+stamp	own	stamp 128,96 text=🔥
+stamps	own	stamp 24,40 font=10 text=✅ ; stamp 58,40 font=10 text=❌ ; stamp 92,40 font=10 text=⚠️ ; stamp 126,40 font=10 text=❗ ; stamp 160,40 font=10 text=⭐ ; stamp 194,40 font=10 text=🔥 ; stamp 228,40 font=10 text=👍 ; stamp 24,96 font=10 text=👎 ; stamp 58,96 font=10 text=💡 ; stamp 92,96 font=10 text=🔒 ; stamp 126,96 font=10 text=🚫 ; stamp 160,96 font=10 text=📌 ; stamp 194,96 font=10 text=🎯 ; stamp 228,96 font=10 text=🐛 ; stamp 24,152 font=10 text=💯 ; stamp 58,152 font=10 text=🤔 ; stamp 92,152 font=10 text=😂 ; stamp 126,152 font=10 text=🎉 ; stamp 160,152 font=10 text=❤️ ; stamp 194,152 font=10 text=🏴‍☠️ ; stamp 228,152 font=10 text=🍆

@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<!-- nsxiv-ng.app's Info.plist; dist/macos/app.sh fills in what stands between @ signs. The document types
+     are the images the viewer decodes on macOS: by the system's type where it has one, else by
+     extension. Alternate: the app is offered in Open With, and takes no type's default. -->
+<plist version="1.0">
+<dict>
+	<key>CFBundleName</key>
+	<string>nsxiv-ng</string>
+	<key>CFBundleDisplayName</key>
+	<string>nsxiv-ng</string>
+	<key>CFBundleExecutable</key>
+	<string>nsxiv-ng</string>
+	<key>CFBundleIdentifier</key>
+	<string>@IDENTIFIER@</string>
+	<key>CFBundleVersion</key>
+	<string>@VERSION@</string>
+	<key>CFBundleShortVersionString</key>
+	<string>@VERSION@</string>
+	<key>CFBundlePackageType</key>
+	<string>APPL</string>
+	<key>CFBundleInfoDictionaryVersion</key>
+	<string>6.0</string>
+	<key>LSMinimumSystemVersion</key>
+	<string>@MINIMUM@</string>
+	<key>LSApplicationCategoryType</key>
+	<string>public.app-category.photography</string>
+	<key>NSHighResolutionCapable</key>
+	<true/>
+	<key>NSPrincipalClass</key>
+	<string>NSApplication</string>
+	<key>CFBundleDocumentTypes</key>
+	<array>
+		<dict>
+			<key>CFBundleTypeName</key>
+			<string>Image</string>
+			<key>CFBundleTypeRole</key>
+			<string>Viewer</string>
+			<key>LSHandlerRank</key>
+			<string>Alternate</string>
+			<key>LSItemContentTypes</key>
+			<array>
+				<string>public.jpeg</string>
+				<string>public.png</string>
+				<string>com.compuserve.gif</string>
+				<string>org.webmproject.webp</string>
+				<string>public.tiff</string>
+				<string>com.microsoft.bmp</string>
+				<string>com.microsoft.ico</string>
+				<string>com.truevision.tga-image</string>
+				<string>public.pbm</string>
+				<string>com.ilm.openexr-image</string>
+				<string>public.radiance</string>
+				<string>public.jpeg-2000</string>
+				<string>public.xbitmap-image</string>
+				<string>public.svg-image</string>
+				<string>public.jpeg-xl</string>
+				<string>public.heic</string>
+				<string>public.heif</string>
+				<string>public.avif</string>
+				<string>com.canon.cr2-raw-image</string>
+				<string>com.canon.cr3-raw-image</string>
+				<string>com.nikon.raw-image</string>
+				<string>com.nikon.nrw-raw-image</string>
+				<string>com.sony.arw-raw-image</string>
+				<string>com.sony.raw-image</string>
+				<string>com.sony.sr2-raw-image</string>
+				<string>com.adobe.raw-image</string>
+				<string>com.pentax.raw-image</string>
+				<string>com.samsung.raw-image</string>
+				<string>com.epson.raw-image</string>
+				<string>com.olympus.raw-image</string>
+				<string>com.panasonic.rw2-raw-image</string>
+				<string>com.fuji.raw-image</string>
+				<string>com.adobe.photoshop-image</string>
+				<string>com.adobe.photoshop-large-image</string>
+				<string>com.apple.icns</string>
+			</array>
+		</dict>
+		<dict>
+			<key>CFBundleTypeName</key>
+			<string>Image without a system type</string>
+			<key>CFBundleTypeRole</key>
+			<string>Viewer</string>
+			<key>LSHandlerRank</key>
+			<string>Alternate</string>
+			<key>CFBundleTypeExtensions</key>
+			<array>
+				<string>jfif</string>
+				<string>apng</string>
+				<string>pnm</string>
+				<string>pam</string>
+				<string>qoi</string>
+				<string>ff</string>
+				<string>jpc</string>
+				<string>xpm</string>
+			</array>
+		</dict>
+	</array>
+</dict>
+</plist>

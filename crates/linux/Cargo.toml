@@ -1,0 +1,44 @@
+[package]
+name = "nsxiv-ng-linux"
+description = "Linux frontends of nsxiv-ng"
+version.workspace = true
+edition.workspace = true
+rust-version.workspace = true
+license.workspace = true
+repository.workspace = true
+
+# nothing off Linux, where the crate is empty
+[target.'cfg(target_os = "linux")'.dependencies]
+nsxiv-ng-core.workspace = true
+nsxiv-ng-render.workspace = true
+nsxiv-ng-session.workspace = true
+
+# terminal frames: PNG and its base64 for the kitty protocol, and sixels
+base64 = "0.23"
+# a Wayland buffer's bytes as the canvas's pixels
+bytemuck = "1"
+icy_sixel = "0.7"
+png = "0.18"
+
+# the event loop, its signals, the terminal's modes and size, and file watches
+calloop = { version = "0.14", features = ["signals"] }
+# a key-handler's signal mask, emptied in the child before it runs
+libc = "0.2"
+rustix = { version = "1", features = ["fs", "mm", "termios"] }
+
+# the window systems: keysyms and their names for both, in the version the toolkit takes,
+# then Wayland and X11
+xkbcommon = "0.8"
+smithay-client-toolkit = "0.21"
+# their own lines on a broken connection go to log, which the viewer prints nothing of: its own
+# error says what it lost, and why
+# shortcut: a message the client cannot parse then reads only as a protocol error with its
+# errno, the source's own text about it gone; print that text again if it ever matters
+calloop-wayland-source = { version = "0.4", features = ["log"] }
+wayland-backend = { version = "0.3", features = ["log"] }
+x11rb = { version = "0.14", features = ["randr", "shm", "xkb"] }
+# sway's tree, as its IPC gives it
+serde_json = { version = "1", default-features = false, features = ["std"] }
+
+[lints]
+workspace = true

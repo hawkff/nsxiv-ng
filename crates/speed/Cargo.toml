@@ -1,0 +1,16 @@
+[package]
+name = "nsxiv-ng-speed"
+description = "Measures an X11 image viewer that takes nsxiv's keys: frame times and peak memory"
+version.workspace = true
+edition.workspace = true
+rust-version.workspace = true
+license.workspace = true
+repository.workspace = true
+publish = false
+
+# nothing off Linux, where the tool only says it measures an X11 viewer
+[target.'cfg(target_os = "linux")'.dependencies]
+x11rb = { version = "0.14", features = ["damage", "xtest"] }
+
+[lints]
+workspace = true

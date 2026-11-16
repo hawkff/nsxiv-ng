@@ -1,0 +1,18 @@
+# build output
+/target/
+
+# OS files
+.DS_Store
+._*
+__MACOSX/
+
+# editors
+.idea/
+.vscode/
+.cursor/
+*.swp
+*~
+
+# credentials
+.env
+.env.*

@@ -1,0 +1,49 @@
+[package]
+name = "nsxiv-ng-helper"
+description = "Sandboxed decoding processes for nsxiv-ng"
+version.workspace = true
+edition.workspace = true
+rust-version.workspace = true
+license.workspace = true
+repository.workspace = true
+
+[dependencies]
+nsxiv-ng-decode.workspace = true
+libc = "0.2"
+rustix = { version = "1", features = ["io_uring", "net", "process"] }
+
+# Linux's sandbox; macOS's is Seatbelt, which libSystem has
+[target.'cfg(target_os = "linux")'.dependencies]
+landlock = "0.4"
+seccompiler = { version = "0.5", default-features = false }
+
+# HEIC and AVIF through ImageIO, in the viewer's own process
+[target.'cfg(target_os = "macos")'.dependencies]
+objc2-core-foundation = { version = "0.3", default-features = false, features = [
+    "std",
+    "CFCGTypes",
+    "CFData",
+    "CFDictionary",
+    "CFNumber",
+    "CFString",
+] }
+objc2-core-graphics = { version = "0.3", default-features = false, features = [
+    "std",
+    "CGBitmapContext",
+    "CGColorSpace",
+    "CGContext",
+    "CGImage",
+] }
+objc2-image-io = { version = "0.3", default-features = false, features = [
+    "std",
+    "CGImageProperties",
+    "CGImageSource",
+    "objc2-core-graphics",
+] }
+
+# HEICs written for tests
+[target.'cfg(target_os = "macos")'.dev-dependencies]
+objc2-image-io = { version = "0.3", default-features = false, features = ["CGImageDestination"] }
+
+[lints]
+workspace = true

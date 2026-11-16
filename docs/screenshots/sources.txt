@@ -1,0 +1,205 @@
+The images in the screenshots, all in the public domain, from Wikimedia Commons.
+
+NASA's photos: by NASA or its astronauts, not copyrighted, per NASA's media guidelines
+(https://www.nasa.gov/nasa-brand-center/images-and-media/); none is credited to a third party.
+The paintings and prints: by artists who died before 1900 (Hokusai 1849, Van Gogh 1890, Turner
+1851, Vermeer 1675, Friedrich 1840, Seurat 1891, Constable 1837, Cole 1848, Millet 1875), each
+marked Public domain on its Commons page. Each was downloaded at Commons' largest thumbnail,
+scaled to 2400 pixels at most and stripped of metadata; the edit shot used The Hay Wain scaled to
+1200 pixels.
+
+Where they show:
+  image.webp: aurora-australis.jpg
+  grid.webp: all 27, in a mixed order
+  edit.webp: the-hay-wain.jpg
+  terminal.webp: great-wave.jpg
+
+earthrise.jpg
+  NASA-Apollo8-Dec24-Earthrise.jpg
+  by: NASA/Bill Anders
+  license: Public domain
+  source page: https://commons.wikimedia.org/wiki/File:NASA-Apollo8-Dec24-Earthrise.jpg
+  file used: https://upload.wikimedia.org/wikipedia/commons/a/a8/NASA-Apollo8-Dec24-Earthrise.jpg
+
+blue-marble.jpg
+  The Earth seen from Apollo 17.jpg
+  by: NASA/Apollo 17 crew; taken by either Harrison Schmitt or Ron Evans
+  license: Public domain
+  source page: https://commons.wikimedia.org/wiki/File:The_Earth_seen_from_Apollo_17.jpg
+  file used: https://upload.wikimedia.org/wikipedia/commons/9/97/The_Earth_seen_from_Apollo_17.jpg
+
+aldrin-on-the-moon.jpg
+  Aldrin Apollo 11 original.jpg
+  by: Neil Armstrong
+  license: Public domain
+  source page: https://commons.wikimedia.org/wiki/File:Aldrin_Apollo_11_original.jpg
+  file used: https://thumb.wikimedia.org/wikipedia/commons/thumb/9/98/Aldrin_Apollo_11_original.jpg/3840px-Aldrin_Apollo_11_original.jpg
+
+cernan-on-the-moon.jpg
+  Apollo 17 Cernan on moon.jpg
+  by: NASA / Harrison H. Schmitt
+  license: Public domain
+  source page: https://commons.wikimedia.org/wiki/File:Apollo_17_Cernan_on_moon.jpg
+  file used: https://thumb.wikimedia.org/wikipedia/commons/thumb/2/2f/Apollo_17_Cernan_on_moon.jpg/3840px-Apollo_17_Cernan_on_moon.jpg
+
+untethered-spacewalk.jpg
+  Bruce McCandless II during EVA in 1984.jpg
+  by: NASA
+  license: Public domain
+  source page: https://commons.wikimedia.org/wiki/File:Bruce_McCandless_II_during_EVA_in_1984.jpg
+  file used: https://upload.wikimedia.org/wikipedia/commons/9/91/Bruce_McCandless_II_during_EVA_in_1984.jpg
+
+space-station.jpg
+  International Space Station after undocking of STS-132.jpg
+  by: NASA/Crew of STS-132
+  license: Public domain
+  source page: https://commons.wikimedia.org/wiki/File:International_Space_Station_after_undocking_of_STS-132.jpg
+  file used: https://upload.wikimedia.org/wikipedia/commons/0/04/International_Space_Station_after_undocking_of_STS-132.jpg
+
+aurora-australis.jpg
+  Aurora Australis From ISS.JPG
+  by: ISS Expedition 23 crew
+  license: Public domain
+  source page: https://commons.wikimedia.org/wiki/File:Aurora_Australis_From_ISS.JPG
+  file used: https://thumb.wikimedia.org/wikipedia/commons/thumb/f/f1/Aurora_Australis_From_ISS.JPG/3840px-Aurora_Australis_From_ISS.JPG
+
+columbia-launch.jpg
+  Space Shuttle Columbia launching.jpg
+  by: NASA
+  license: Public domain
+  source page: https://commons.wikimedia.org/wiki/File:Space_Shuttle_Columbia_launching.jpg
+  file used: https://thumb.wikimedia.org/wikipedia/commons/thumb/4/41/Space_Shuttle_Columbia_launching.jpg/3840px-Space_Shuttle_Columbia_launching.jpg
+
+atlantis-launch.jpg
+  Atlantis taking off on STS-27.jpg
+  by: NASA
+  license: Public domain
+  source page: https://commons.wikimedia.org/wiki/File:Atlantis_taking_off_on_STS-27.jpg
+  file used: https://upload.wikimedia.org/wikipedia/commons/d/d3/Atlantis_taking_off_on_STS-27.jpg
+
+discovery-launch.jpg
+  STS120LaunchHiRes-edit1.jpg
+  by: NASA; edited by jjron (tilt corrected)
+  license: Public domain
+  source page: https://commons.wikimedia.org/wiki/File:STS120LaunchHiRes-edit1.jpg
+  file used: https://upload.wikimedia.org/wikipedia/commons/d/d6/STS120LaunchHiRes-edit1.jpg
+
+apollo-11-launch.jpg
+  Apollo 11 Launch - GPN-2000-000630.jpg
+  by: NASA
+  license: Public domain
+  source page: https://commons.wikimedia.org/wiki/File:Apollo_11_Launch_-_GPN-2000-000630.jpg
+  file used: https://upload.wikimedia.org/wikipedia/commons/1/16/Apollo_11_Launch_-_GPN-2000-000630.jpg
+
+lunar-rover.jpg
+  Apollo 15 flag, rover, LM, Irwin.jpg
+  by: Astronaut David R. Scott, Apollo 15 commander.
+  license: Public domain
+  source page: https://commons.wikimedia.org/wiki/File:Apollo_15_flag,_rover,_LM,_Irwin.jpg
+  file used: https://upload.wikimedia.org/wikipedia/commons/f/fe/Apollo_15_flag%2C_rover%2C_LM%2C_Irwin.jpg
+
+endeavour-at-dawn.jpg
+  Endeavour silhouette STS-130.jpg
+  by: NASA/Crew of Expedition 22
+  license: Public domain
+  source page: https://commons.wikimedia.org/wiki/File:Endeavour_silhouette_STS-130.jpg
+  file used: https://thumb.wikimedia.org/wikipedia/commons/thumb/6/6b/Endeavour_silhouette_STS-130.jpg/3840px-Endeavour_silhouette_STS-130.jpg
+
+great-wave.jpg
+  Great Wave off Kanagawa2.jpg
+  by: After Katsushika Hokusai
+  license: Public domain
+  source page: https://commons.wikimedia.org/wiki/File:Great_Wave_off_Kanagawa2.jpg
+  file used: https://thumb.wikimedia.org/wikipedia/commons/thumb/0/0d/Great_Wave_off_Kanagawa2.jpg/3840px-Great_Wave_off_Kanagawa2.jpg
+
+red-fuji.jpg
+  Red Fuji southern wind clear morning.jpg
+  by: Katsushika Hokusai
+  license: Public domain
+  source page: https://commons.wikimedia.org/wiki/File:Red_Fuji_southern_wind_clear_morning.jpg
+  file used: https://thumb.wikimedia.org/wikipedia/commons/thumb/5/57/Red_Fuji_southern_wind_clear_morning.jpg/3840px-Red_Fuji_southern_wind_clear_morning.jpg
+
+starry-night.jpg
+  Van Gogh - Starry Night - Google Art Project.jpg
+  by: Vincent van Gogh
+  license: Public domain
+  source page: https://commons.wikimedia.org/wiki/File:Van_Gogh_-_Starry_Night_-_Google_Art_Project.jpg
+  file used: https://thumb.wikimedia.org/wikipedia/commons/thumb/e/ea/Van_Gogh_-_Starry_Night_-_Google_Art_Project.jpg/3840px-Van_Gogh_-_Starry_Night_-_Google_Art_Project.jpg
+
+cafe-terrace-at-night.jpg
+  Van Gogh - Terrasse des Cafés an der Place du Forum in Arles am Abend1.jpeg
+  by: Vincent van Gogh
+  license: Public domain
+  source page: https://commons.wikimedia.org/wiki/File:Van_Gogh_-_Terrasse_des_Caf%C3%A9s_an_der_Place_du_Forum_in_Arles_am_Abend1.jpeg
+  file used: https://thumb.wikimedia.org/wikipedia/commons/thumb/0/09/Van_Gogh_-_Terrasse_des_Caf%C3%A9s_an_der_Place_du_Forum_in_Arles_am_Abend1.jpeg/3840px-Van_Gogh_-_Terrasse_des_Caf%C3%A9s_an_der_Place_du_Forum_in_Arles_am_Abend1.jpeg
+
+wheatfield-with-crows.jpg
+  Vincent van Gogh - Wheatfield with crows - Google Art Project.jpg
+  by: Vincent van Gogh
+  license: Public domain
+  source page: https://commons.wikimedia.org/wiki/File:Vincent_van_Gogh_-_Wheatfield_with_crows_-_Google_Art_Project.jpg
+  file used: https://upload.wikimedia.org/wikipedia/commons/b/ba/Vincent_van_Gogh_-_Wheatfield_with_crows_-_Google_Art_Project.jpg
+
+irises.jpg
+  Irises-Vincent van Gogh.jpg
+  by: Vincent van Gogh
+  license: Public domain
+  source page: https://commons.wikimedia.org/wiki/File:Irises-Vincent_van_Gogh.jpg
+  file used: https://thumb.wikimedia.org/wikipedia/commons/thumb/3/3e/Irises-Vincent_van_Gogh.jpg/3840px-Irises-Vincent_van_Gogh.jpg
+
+fighting-temeraire.jpg
+  Turner, J. M. W. - The Fighting Téméraire tugged to her last Berth to be broken.jpg
+  by: J. M. W. Turner
+  license: Public domain
+  source page: https://commons.wikimedia.org/wiki/File:Turner,_J._M._W._-_The_Fighting_T%C3%A9m%C3%A9raire_tugged_to_her_last_Berth_to_be_broken.jpg
+  file used: https://thumb.wikimedia.org/wikipedia/commons/thumb/9/94/Turner%2C_J._M._W._-_The_Fighting_T%C3%A9m%C3%A9raire_tugged_to_her_last_Berth_to_be_broken.jpg/3840px-Turner%2C_J._M._W._-_The_Fighting_T%C3%A9m%C3%A9raire_tugged_to_her_last_Berth_to_be_broken.jpg
+
+girl-with-a-pearl-earring.jpg
+  1665 Girl with a Pearl Earring.jpg
+  by: Johannes Vermeer
+  license: Public domain
+  source page: https://commons.wikimedia.org/wiki/File:1665_Girl_with_a_Pearl_Earring.jpg
+  file used: https://thumb.wikimedia.org/wikipedia/commons/thumb/0/0f/1665_Girl_with_a_Pearl_Earring.jpg/3840px-1665_Girl_with_a_Pearl_Earring.jpg
+
+the-milkmaid.jpg
+  Johannes Vermeer - Het melkmeisje - Google Art Project.jpg
+  by: Johannes Vermeer
+  license: Public domain
+  source page: https://commons.wikimedia.org/wiki/File:Johannes_Vermeer_-_Het_melkmeisje_-_Google_Art_Project.jpg
+  file used: https://thumb.wikimedia.org/wikipedia/commons/thumb/2/20/Johannes_Vermeer_-_Het_melkmeisje_-_Google_Art_Project.jpg/3840px-Johannes_Vermeer_-_Het_melkmeisje_-_Google_Art_Project.jpg
+
+wanderer-above-the-sea-of-fog.jpg
+  Caspar David Friedrich - Wanderer above the sea of fog.jpg
+  by: Caspar David Friedrich
+  license: Public domain
+  source page: https://commons.wikimedia.org/wiki/File:Caspar_David_Friedrich_-_Wanderer_above_the_sea_of_fog.jpg
+  file used: https://upload.wikimedia.org/wikipedia/commons/b/b9/Caspar_David_Friedrich_-_Wanderer_above_the_sea_of_fog.jpg
+
+la-grande-jatte.jpg
+  A Sunday on La Grande Jatte, Georges Seurat, 1884.jpg
+  by: Georges Seurat
+  license: Public domain
+  source page: https://commons.wikimedia.org/wiki/File:A_Sunday_on_La_Grande_Jatte,_Georges_Seurat,_1884.jpg
+  file used: https://thumb.wikimedia.org/wikipedia/commons/thumb/7/7d/A_Sunday_on_La_Grande_Jatte%2C_Georges_Seurat%2C_1884.jpg/3840px-A_Sunday_on_La_Grande_Jatte%2C_Georges_Seurat%2C_1884.jpg
+
+the-hay-wain.jpg
+  John Constable The Hay Wain.jpg
+  by: John Constable
+  license: Public domain
+  source page: https://commons.wikimedia.org/wiki/File:John_Constable_The_Hay_Wain.jpg
+  file used: https://upload.wikimedia.org/wikipedia/commons/d/d9/John_Constable_The_Hay_Wain.jpg
+
+the-oxbow.jpg
+  Cole Thomas The Oxbow (The Connecticut River near Northampton 1836).jpg
+  by: Thomas Cole
+  license: Public domain
+  source page: https://commons.wikimedia.org/wiki/File:Cole_Thomas_The_Oxbow_(The_Connecticut_River_near_Northampton_1836).jpg
+  file used: https://upload.wikimedia.org/wikipedia/commons/b/b1/Cole_Thomas_The_Oxbow_%28The_Connecticut_River_near_Northampton_1836%29.jpg
+
+the-gleaners.jpg
+  Jean-François Millet - Gleaners - Google Art Project 2.jpg
+  by: Jean-François Millet
+  license: Public domain
+  source page: https://commons.wikimedia.org/wiki/File:Jean-Fran%C3%A7ois_Millet_-_Gleaners_-_Google_Art_Project_2.jpg
+  file used: https://thumb.wikimedia.org/wikipedia/commons/thumb/1/1f/Jean-Fran%C3%A7ois_Millet_-_Gleaners_-_Google_Art_Project_2.jpg/3840px-Jean-Fran%C3%A7ois_Millet_-_Gleaners_-_Google_Art_Project_2.jpg
+

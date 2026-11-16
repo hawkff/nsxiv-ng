@@ -1,0 +1,33 @@
+[package]
+name = "nsxiv-ng-decode"
+description = "Image decoding for nsxiv-ng"
+version.workspace = true
+edition.workspace = true
+rust-version.workspace = true
+license.workspace = true
+repository.workspace = true
+
+[dependencies]
+# no rayon: the scheduler owns the threads; no avif-native: AVIF goes through the HEIF helper
+image = { version = "0.25.10", default-features = false, features = ["bmp", "exr", "ff", "gif", "hdr", "ico", "jpeg", "png", "pnm", "qoi", "tga", "tiff", "webp"] }
+# the version the image crate uses, so the build carries one
+moxcms = "0.8"
+# JPEG 2000 through its ImageDecoder, which converts CMYK and other profiles itself
+hayro-jpeg2000 = "0.5"
+jxl = "0.8"
+image-extras = { version = "0.1", default-features = false, features = ["xbm", "xpm"] }
+# SVG; svgz decompresses here, within the cap, so usvg's unbounded svgz feature stays off
+resvg = { version = "0.50", default-features = false, features = ["text", "system-fonts", "memmap-fonts", "raster-images"] }
+flate2 = "1"
+# the version usvg parses with, so its document can be checked before usvg walks it
+roxmltree = "0.21"
+# the freedesktop thumbnail cache: PNG with text chunks, in files named by the URI's MD5
+png = "0.18"
+md5 = "0.8"
+# O_NONBLOCK, so a FIFO planted in the cache cannot hang a worker
+libc = "0.2"
+# JPEG straight into RGBA, with the image crate's version of zune-jpeg and its options
+zune-jpeg = "0.5"
+
+[lints]
+workspace = true

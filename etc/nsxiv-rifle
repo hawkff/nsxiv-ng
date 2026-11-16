@@ -1,0 +1,72 @@
+#!/bin/sh
+# nsxiv-rifle for nsxiv-ng: opens one image and browses its whole directory, starting at that
+# image, in the order nsxiv-ng gives a directory it scans itself. Several arguments, or a
+# directory, open as they are.
+
+# The extensions nsxiv-ng's directory scan takes; a test holds this list to the viewer's.
+extensions='
+jpg jpeg jpe jfif png apng gif webp tif tiff bmp ico tga pbm pgm ppm pnm pam qoi ff exr hdr
+jp2 jpf jpx j2k j2c jpc xpm xbm svg svgz jxl heic heif avif cr2 cr3 nef nrw arw srf sr2 dng
+pef srw erf orf rw2 raf psd psb icns
+'
+
+[ $# -eq 0 ] && exit 2
+
+if [ $# -gt 1 ] || [ -d "$1" ]; then
+    exec nsxiv-ng -- "$@"
+fi
+
+# a name with a newline goes as it is: command substitution would cut a trailing one, and the
+# list below holds a path a line
+case $1 in *'
+'*) exec nsxiv-ng -- "$1" ;; esac
+
+target=$(basename -- "$1")
+# physically, as the kernel resolves the path the viewer would open: through a link, .. is the
+# link's target's parent, not the folder the link sits in. A relative folder gets ./ before
+# it: cd takes - as the folder before even after --, and goes through CDPATH, which an operand
+# that starts with / or ./ never does
+dir=$(dirname -- "$1")
+case $dir in /*) ;; *) dir=./$dir ;; esac
+cd -P -- "$dir" || exec nsxiv-ng -- "$1"
+
+# The directory's images as the viewer orders them: regular files and links to them, hidden
+# ones left out, by name without regard to case, runs of digits by their value, and names
+# equal so by their bytes. awk keys each name: lower case, each digit run as its length in three
+# digits and its value without leading zeros; sort orders the keys byte by byte, then the
+# whole lines. Both in the C locale, where the caller's could change the case of a letter.
+# shortcut: a name with a newline or a tab is left out, and the order differs from the
+# viewer's for a name with letters past ASCII, whose case awk leaves, and for one that is not
+# UTF-8, which the viewer compares as U+FFFD; sort in the viewer itself if such names turn up
+tab=$(printf '\t')
+# the extensions go to awk through the environment: macOS's awk refuses a -v value with a newline
+list=$(
+    for f in *; do
+        # a parenthesis opens the pattern for bash 3.2, the sh of macOS, or it ends the substitution
+        case $f in (*'
+'* | *"$tab"*) continue ;; esac
+        [ -f "$f" ] && printf '%s\n' "$f"
+    done | EXTENSIONS=$extensions LC_ALL=C awk '
+        BEGIN { n = split(ENVIRON["EXTENSIONS"], list); for (i = 1; i <= n; i++) known[list[i]] = 1 }
+        {
+            if (!match($0, /\.[^.]*$/) || !(tolower(substr($0, RSTART + 1)) in known)) next
+            rest = tolower($0); key = ""
+            while (rest != "") {
+                if (match(rest, /^[0-9]+/)) {
+                    run = substr(rest, 1, RLENGTH); rest = substr(rest, RLENGTH + 1)
+                    sub(/^0+/, "", run)
+                    key = key sprintf("%03d", length(run)) run
+                } else {
+                    key = key substr(rest, 1, 1); rest = substr(rest, 2)
+                }
+            }
+            print key "\t" $0
+        }' | LC_ALL=C sort -t "$tab" -k 1,1 | cut -f 2-
+)
+index=$(printf '%s\n' "$list" |
+    TARGET=$target LC_ALL=C awk '$0 == ENVIRON["TARGET"] { print NR; exit }')
+
+[ -z "$index" ] && exec nsxiv-ng -- "$target"
+# the list on stdin, a path a line, as a large directory's names could pass the length the
+# kernel allows a command line; the viewer takes its keys from the window or /dev/tty
+printf '%s\n' "$list" | nsxiv-ng -i -n "$index"
