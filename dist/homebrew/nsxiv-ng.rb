@@ -1,11 +1,10 @@
 # The Homebrew formula of nsxiv-ng: builds the viewer from source with cargo, so Gatekeeper
-# never quarantines it. It lives here, in no tap; the sha256 is a placeholder until the
-# release's source tarball exists.
+# never quarantines it. It lives here, in no tap.
 class NsxivNg < Formula
   desc "Keyboard-driven image viewer with nsxiv's keys"
   homepage "https://github.com/hawkff/nsxiv-ng"
   url "https://github.com/hawkff/nsxiv-ng/archive/refs/tags/v0.0.1.tar.gz"
-  sha256 "0000000000000000000000000000000000000000000000000000000000000000"
+  sha256 "1466b4ccca9396152e68a075795b0952905c3916e3d92f8cc6f2379a640d64f0"
   license "MIT"
   head "https://github.com/hawkff/nsxiv-ng.git", branch: "main"
 
